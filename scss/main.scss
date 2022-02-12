@@ -1,0 +1,165 @@
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Spartan', sans-serif;
+    background-color: $clr-theme1-dark-blue-main-bg;
+}
+
+main {
+    width: 100%;
+    padding: 1.6rem 1.3rem;
+
+    .header {
+        position: relative;
+        color: $clr-white;
+        margin-bottom: 1.8rem;
+
+        .calc {
+            display: inline-block;
+
+            h1 {
+                padding-top: 4px;
+            }
+        }
+        .theme-wrapper {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+        
+            .theme {
+                display: flex;
+                column-gap: 1.6rem;
+                font-size: 12px;
+
+                #theme {
+                    align-self: flex-end;
+                    letter-spacing: 0.7px;
+                    padding-bottom: 4.3px;
+                }
+
+                .switcher {
+                    align-self: flex-end;
+                    
+
+                    &__numbers-wrapper {
+                        display: flex;
+                        justify-content: space-evenly;
+                        margin-bottom: 4px;
+
+                        .numbers {
+                            display: inline-block;
+                        }
+                    }
+                    &__circle {
+                        height: 26px;
+                        width: 75px;
+                        background-color: $clr-theme1-dark-blue-toogle-keypad-bg;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .input {
+        background-color: $clr-theme1-dark-blue-screen-bg;
+        color: $clr-white;
+        font-size: 2rem;
+        border-radius: 8px;
+        margin-bottom: 1.4rem;
+
+        &__num {
+            text-align: right;
+            padding: 1.6rem 1.3rem;
+        }
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: repeat(5, minmax(0, 1fr));
+        grid-template-areas: "seven eight nine del"
+                             "four five six plus"
+                             "one two three minus"
+                             "point zero divide x"
+                             "reset reset equal equal";
+        gap: 0.8rem;
+        background-color: $clr-theme1-dark-blue-toogle-keypad-bg;
+        border-radius: 8px;
+        padding: 1.5rem 1.3rem;
+
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $clr-theme1-orange-key-bg;
+            border-radius: 6px;            
+            border-bottom: solid 4.7px $clr-theme1-orange-keyshadow;
+
+            .btn {
+                font-size: 2rem;
+                font-family: 'Spartan', sans-serif;
+                background: none;
+                color: $clr-theme1-text-dark-blue;
+                height: 2rem;
+                border-width: 0;
+                
+                // padding: 5px;
+            }
+        }
+
+
+        #seven {
+            height: 70px;
+        }
+
+        #reset {
+            grid-area: reset;
+        }
+
+        #equal {
+            grid-area: equal;
+        }
+
+        #reset>button,
+        #del>button,
+        #equal>button {
+            color: white;
+        }
+
+        #reset>button,
+        #del>button {
+            font-size: 1.1rem;
+        }
+        
+        #multiply>button,
+        #equal>button {
+            font-size: 1.6rem;
+        }
+
+        #reset,
+        #del {
+            background-color: $clr-theme1-dark-blue-key-bg;
+            border-bottom-color: $clr-theme1-dark-blue-keyshadow;
+        }
+        #equal {
+            background-color: $clr-theme1-red-key-bg-toggle;
+            border-bottom-color: $clr-theme1-darkred-keyshadow;
+        }
+    }
+}
+
+
+
